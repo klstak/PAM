@@ -1,3 +1,5 @@
 # Tugas1-PAM
 
-### Michael Pascalis Simanjuntak (120140137)
+### Nama  : Michael Pascalis Simanjuntak
+### NIM   : 120140137
+### Kelas : PAM RA
