@@ -1,0 +1,30 @@
+.t2{
+    width: 280px;
+    height: 653px;
+    border: 1px solid white;
+    border-collapse: collapse;
+    font-size: 13px;
+    color: black;
+}
+
+.t1 {
+    width: 280px;
+    height: 653px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px;
+    background-color: #EEF2F7;
+}
+
+tr:nth-child(odd){
+    background-color: #DCE5EE;
+}
+
+th {
+    background-color: #94B6D2;
+}
+
+td {
+    border: 1px solid white;
+    padding: 10px;
+}

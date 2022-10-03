@@ -4,12 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RA_120140137_Michael</title>
+    <title>RA_120140137_Michael Pascalis Simanjuntak</title>
 </head>
 
 <body>
 
+    <div class="t1">
+        <table class="t2">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Nilai</th>
+                    <th>Huruf Mutu</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <!--jquery untuk membuat user dari fakerjs untuk membuat data dummy-->
+        <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+            integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+        <script type="module">
+            import { faker } from 'https://cdn.skypack.dev/@faker-js/faker/locale/id_ID';
+
+            $(document).ready(function () {
+                let user = [{
+                    "Nama": "Michael Pascalis Simanjuntak",
+                    "NIM": 137,
+                    "Nilai": 80
+                }];
+
+                let userMax = 15;
+                for (let i = 1; i < userMax; i++) {
+                    user.push({
+                        "Nama": faker.name.lastName() + " " + faker.name.firstName(),
+                        "NIM": faker.random.numeric(3),
+                        "Nilai": faker.random.numeric(2)
+                    });
+                }
+
+                let tr;
+                let mutu;
+
+                for (let i = 0; i < userMax; i++) {
+                    tr = $('<tr/>');
+                    tr.append('<td>' + (i + 1) + "</td>");
+                    tr.append('<td>' + user[i].Nama + "</td>");
+                    tr.append('<td>' + user[i].NIM + "</td>");
+                    tr.append('<td>' + user[i].Nilai + "</td>");
+
+                    switch (true) {
+                        case (user[i].Nilai >= 80):
+                            mutu = "A";
+                            break;
+                        case (user[i].Nilai >= 70):
+                            mutu = "AB";
+                            break;
+                        case (user[i].Nilai >= 60):
+                            mutu = "B";
+                            break;
+                        case (user[i].Nilai >= 50):
+                            mutu = "BC";
+                            break;
+                        case (user[i].Nilai >= 40):
+                            mutu = "C";
+                            break;
+                        case (user[i].Nilai >= 10):
+                            mutu = "D";
+                            break;
+                        default:
+                            mutu = "E";
+                            break;
+                    }
+                    tr.append('<td>' + mutu + "</td>");
+                    $('table').first().append(tr);
+                }
+            });
+        </script>
+    </div>
 </body>
 
 </html>
